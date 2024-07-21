@@ -1,4 +1,4 @@
-require_relative '../controllers/persons'
+require_relative '../controllers/persons_controller'
 
 class Menu
   def initialize

@@ -1,4 +1,4 @@
-require_relative 'controllers/persons'
+require_relative 'controllers/persons_controller'
 require_relative 'models/person'
 require_relative 'models/menu'
 
