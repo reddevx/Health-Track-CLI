@@ -40,12 +40,11 @@ class PersonsController
     puts "Digite sua altura (m):"
     @person.height = gets.chomp.to_f
 
-    imc_value = @person.calculate_imc
-    if imc_value
-      puts "Seu IMC é: #{imc_value}"
-    else
-      puts "Não foi possível calcular o IMC. Verifique os valores fornecidos."
-    end
+    @person.calculate_imc
+
+    return puts "Seu IMC é: #{@person.imc}" if @person.imc
+    
+    puts "Não foi possível calcular o IMC. Verifique os valores fornecidos."
   end
 
   def input_pam
@@ -55,11 +54,10 @@ class PersonsController
     puts "Digite seu PAD:"
     @person.pad = gets.chomp.to_f
 
-    pam_value = @person.calculate_pam
-    if pam_value
-      puts "Sua Pressão Arterial Média (PAM) é: #{pam_value}"
-    else
-      puts "Não foi possível calcular a PAM. Verifique os valores fornecidos."
-    end
+    @person.calculate_pam
+    
+    return puts "Seu PAM é: #{@person.pam}" if @person.pam
+    
+    puts "Não foi possível calcular o PAM. Verifique os valores fornecidos."
   end
 end
