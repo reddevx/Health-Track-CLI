@@ -1,9 +1,11 @@
 class Menu
-  def initialize
-    @controller = PersonsController.new
+  def initialize(controller)
+    @controller = controller.new
 
     @options = { 0 => { label: 'Sair', action: -> { end_app }} }
     @options = @options.merge(@controller.options)
+
+    @options.default =  { action: -> { puts "Opção inválida.\n" } } 
   end
 
   def show_options
