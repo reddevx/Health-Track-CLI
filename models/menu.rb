@@ -1,6 +1,16 @@
 class Menu
   def initialize
     @controller = PersonsController.new
+    
+    @options = {
+        1 => -> { @controller.fetch_person }, 
+        2 => -> { @controller.input_imc }, 
+        3 => -> { @controller.input_pam }, 
+        4 => -> { @controller.display_person }, 
+        5 => -> { end_app }
+      }
+
+    @options.default = -> { puts "Opção inválida.\n" }
   end
 
   def show_options
@@ -12,23 +22,10 @@ class Menu
     puts '5. Sair'
   end
 
+
   def select_option
     @option = gets.chomp.to_i
-    
-    case @option
-    when 1
-      @controller.fetch_person
-    when 2
-      @controller.input_imc
-    when 3
-      @controller.input_pam
-    when 4
-      @controller.display_person
-    when 5
-      puts "Saindo..."
-      exit
-    else
-      puts "Opção inválida. Tente novamente."
-    end
+
+    @options[@option].call
   end
 end
