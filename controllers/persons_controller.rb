@@ -3,6 +3,19 @@ class PersonsController
 
   def initialize
     @person = Person.new
+
+  def options
+    option = {
+      1 => { label: 'Cadastrar pessoa', action: -> { self.fetch_person  } },
+      2 => { label: 'Calcular IMC', action: -> { self.input_imc  } },
+      3 => { label: 'Calcular Pam', action: -> { self.input_pam  } },
+      4 => { label: 'Exibir informações', action: -> { self.display_person  } },
+    }
+    
+    option.default =  { action: -> { puts "Opção inválida.\n" } } 
+
+    option 
+    end
   end
 
   def fetch_person
