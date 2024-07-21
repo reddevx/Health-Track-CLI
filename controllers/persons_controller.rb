@@ -29,8 +29,8 @@ class PersonsController
   end
 
   def display_person
-    display_person = DisplayPerson.new(@person)
-    display_person.display_person
+    view = DisplayPerson.new(@person)
+    view.display
   end
 
   def input_imc
@@ -43,7 +43,7 @@ class PersonsController
     @person.calculate_imc
 
     return puts "Seu IMC é: #{@person.imc}" if @person.imc
-    
+
     puts "Não foi possível calcular o IMC. Verifique os valores fornecidos."
   end
 
