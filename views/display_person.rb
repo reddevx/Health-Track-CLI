@@ -1,25 +1,25 @@
 require_relative '../models/person'
 
-class DisplayInfo
-  def initialize(info)
-    @info = info
+class DisplayPerson
+  def initialize(person)
+    @person = person
   end
 
-  def display_info
-    puts "Informações de #{@info.nome}"
-    puts "Nome: #{@info.nome}"
-    puts "Email: #{@info.email}"
+  def display_person
+    puts "Informações de #{@person.nome}"
+    puts "Nome: #{@person.nome}"
+    puts "Email: #{@person.email}"
   
-    puts "Peso (kg): #{@info.weight}"
-    puts "Altura (m): #{@info.height}"
+    puts "Peso (kg): #{@person.weight}"
+    puts "Altura (m): #{@person.height}"
   
-    imc_value = @info.calculate_imc
+    imc_value = @person.calculate_imc
     puts "IMC: #{imc_value}"
   
-    puts "PAS: #{@info.pas}"
-    puts "PAD: #{@info.pad}"
+    puts "PAS: #{@person.pas}"
+    puts "PAD: #{@person.pad}"
   
-    pam_value = @info.calculate_pam
+    pam_value = @person.calculate_pam
     puts "PAM: #{pam_value}"
   end
 end

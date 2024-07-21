@@ -19,8 +19,8 @@ class PersonsController
   end
 
   def display_person
-    display_info = DisplayInfo.new(@person)
-    display_info.display_info
+    display_person = DisplayPerson.new(@person)
+    display_person.display_person
   end
 
   def input_imc
