@@ -1,5 +1,3 @@
-require_relative '../controllers/persons_controller'
-
 class Menu
   def initialize
     @controller = PersonsController.new

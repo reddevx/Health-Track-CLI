@@ -1,4 +1,5 @@
 require_relative 'controllers/persons_controller'
+require_relative 'views/display_person'
 require_relative 'models/person'
 require_relative 'models/menu'
 

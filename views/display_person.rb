@@ -1,5 +1,3 @@
-require_relative '../models/person'
-
 class DisplayPerson
   def initialize(person)
     @person = person

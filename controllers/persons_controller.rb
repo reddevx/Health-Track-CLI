@@ -1,6 +1,3 @@
-require_relative '../models/person'
-require_relative '../views/display_person'
-
 class PersonsController
   attr_reader :person
 
