@@ -1,5 +1,5 @@
 require_relative '../models/info'
-require_relative '../views/display_info'
+require_relative '../views/display_person'
 
 class PersonsController
   attr_reader :info
