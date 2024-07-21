@@ -28,4 +28,9 @@ class Menu
 
     @options[@option].call
   end
+
+  def end_app
+    puts "saindo..."
+    exit
+  end
 end
