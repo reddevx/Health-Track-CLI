@@ -3,6 +3,7 @@ class PersonsController
 
   def initialize
     @person = Person.new
+  end
 
   def options
     option = {
@@ -15,7 +16,6 @@ class PersonsController
     option.default =  { action: -> { puts "Opção inválida.\n" } } 
 
     option 
-    end
   end
 
   def fetch_person
