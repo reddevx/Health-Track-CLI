@@ -1,4 +1,4 @@
-class Info
+class Person
   attr_accessor :nome, :email, :weight, :height, :pas, :pad
 
   def initialize

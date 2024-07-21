@@ -1,5 +1,5 @@
 require_relative 'controllers/persons'
-require_relative 'models/info'
+require_relative 'models/person'
 require_relative 'models/menu'
 
 class App

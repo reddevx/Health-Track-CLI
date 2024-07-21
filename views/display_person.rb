@@ -1,4 +1,4 @@
-require_relative '../models/info'
+require_relative '../models/person'
 
 class DisplayInfo
   def initialize(info)

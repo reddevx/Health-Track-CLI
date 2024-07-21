@@ -1,36 +1,36 @@
-require_relative '../models/info'
+require_relative '../models/person'
 require_relative '../views/display_person'
 
 class PersonsController
-  attr_reader :info
+  attr_reader :person
 
   def initialize
-    @info = Info.new
+    @person = Person.new
   end
 
   def fetch_person
     puts "Digite seu nome:"
-    @info.nome = gets.chomp
+    @person.nome = gets.chomp
 
     puts "Digite seu email:"
-    @info.email = gets.chomp
+    @person.email = gets.chomp
 
     puts "Cadastrado com sucesso!"
   end
 
   def display_person
-    display_info = DisplayInfo.new(@info)
+    display_info = DisplayInfo.new(@person)
     display_info.display_info
   end
 
   def input_imc
     puts "Digite seu peso (kg):"
-    @info.weight = gets.chomp.to_f
+    @person.weight = gets.chomp.to_f
 
     puts "Digite sua altura (m):"
-    @info.height = gets.chomp.to_f
+    @person.height = gets.chomp.to_f
 
-    imc_value = @info.calculate_imc
+    imc_value = @person.calculate_imc
     if imc_value
       puts "Seu IMC é: #{imc_value}"
     else
@@ -40,12 +40,12 @@ class PersonsController
 
   def input_pam
     puts "Digite seu PAS:"
-    @info.pas = gets.chomp.to_f
+    @person.pas = gets.chomp.to_f
 
     puts "Digite seu PAD:"
-    @info.pad = gets.chomp.to_f
+    @person.pad = gets.chomp.to_f
 
-    pam_value = @info.calculate_pam
+    pam_value = @person.calculate_pam
     if pam_value
       puts "Sua Pressão Arterial Média (PAM) é: #{pam_value}"
     else
