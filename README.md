@@ -21,7 +21,7 @@ Para instalar e rodar este projeto localmente, siga os passos abaixo:
 1. Clone o repositório:
     ```sh
     git clone https://github.com/reddevx/Health-Track-CLI
-    cd ht-cli
+    cd Health-Track-CLI
     ```
 
 2. Rodar o programa:
