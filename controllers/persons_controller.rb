@@ -6,16 +6,16 @@ class PersonsController
   end
 
   def options
-    option = {
+    options = {
       1 => { label: 'Cadastrar pessoa', action: -> { self.fetch_person  } },
       2 => { label: 'Calcular IMC', action: -> { self.input_imc  } },
       3 => { label: 'Calcular Pam', action: -> { self.input_pam  } },
       4 => { label: 'Exibir informações', action: -> { self.display_person  } },
     }
     
-    option.default =  { action: -> { puts "Opção inválida.\n" } } 
+    options.default =  { action: -> { puts "Opção inválida.\n" } } 
 
-    option 
+    options 
   end
 
   def fetch_person

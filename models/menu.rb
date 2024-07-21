@@ -1,10 +1,9 @@
 class Menu
   def initialize
     @controller = PersonsController.new
-    
-    @options = @controller.options
 
-    @options[5] = {label: 'Sair', action: -> { end_app }}
+    @options = { 0 => { label: 'Sair', action: -> { end_app }} }
+    @options = @options.merge(@controller.options)
   end
 
   def show_options
@@ -14,9 +13,7 @@ class Menu
   end
 
   def select_option
-    @option = gets.chomp.to_i
-
-    @options[@option][:action].call
+    @options[gets.chomp.to_i][:action].call
   end
 
   def end_app
